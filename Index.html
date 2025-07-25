@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GK eBook Download - AKG STUDY GROUP</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #e6f0ff, #ffffff);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      max-width: 720px;
+      background: white;
+      border-radius: 15px;
+      padding: 50px 30px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 32px;
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .timer {
+      font-size: 20px;
+      color: #e91e63;
+      margin-bottom: 25px;
+      font-weight: bold;
+    }
+
+    #downloadBtn {
+      display: none;
+      background: #28a745;
+      color: #fff;
+      padding: 14px 32px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 0 10px #28a745;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 10px #28a745; }
+      50% { box-shadow: 0 0 20px #28a745, 0 0 40px #28a74566; }
+      100% { box-shadow: 0 0 10px #28a745; }
+    }
+
+    .contact, .social {
+      margin-top: 40px;
+      font-size: 16px;
+      color: #444;
+    }
+
+    .social a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    .social a:hover {
+      color: #ff4081;
+    }
+
+    .shimmer {
+      background: linear-gradient(to right, #f0f0f0 8%, #d9d9d9 18%, #f0f0f0 33%);
+      background-size: 800px 104px;
+      animation: shimmer 1.2s linear infinite;
+      border-radius: 8px;
+      height: 20px;
+      width: 180px;
+      margin: 20px auto;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -800px 0; }
+      100% { background-position: 800px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🎉 Thank You for Your Purchase!</h1>
+    <p>You’ve successfully purchased the <strong>GK eBook Bundle</strong>.</p>
+    <p class="timer">Generating your secure download link in <span id="countdown">10</span> seconds...</p>
+
+    <!-- Fancy loading shimmer -->
+    <div class="shimmer"></div>
+
+    <!-- Download button -->
+    <a id="downloadBtn" href="https://yourdomain.com/secure/gk-ebook-bundle.pdf" download>📘 Download GK eBook Now</a>
+
+    <div class="contact">
+      📩 Need Help? <a href="mailto:akgstudysupport@gmail.com">akgstudysupport@gmail.com</a>
+    </div>
+
+    <div class="social">
+      🔗 Follow Us:
+      <a href="https://instagram.com/akgstudygroup" target="_blank">Instagram</a> |
+      <a href="https://threads.net/@akgstudygroup" target="_blank">Threads</a> |
+      <a href="https://wa.me/91XXXXXXXXXX" target="_blank">WhatsApp</a>
+    </div>
+  </div>
+
+  <script>
+    let seconds = 10;
+    const countdown = document.getElementById('countdown');
+    const downloadBtn = document.getElementById('downloadBtn');
+
+    const timer = setInterval(() => {
+      seconds--;
+      countdown.textContent = seconds;
+      if (seconds <= 0) {
+        clearInterval(timer);
+        document.querySelector(".timer").style.display = "none";
+        document.querySelector(".shimmer").style.display = "none";
+        downloadBtn.style.display = "inline-block";
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
